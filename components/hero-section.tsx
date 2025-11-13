@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { Mail, SendHorizonal } from 'lucide-react'
@@ -27,6 +28,31 @@ const transitionVariants = {
 }
 
 export default function HeroSection() {
+    const [email, setEmail] = React.useState('')
+    const [loading, setLoading] = React.useState(false)
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        if (!email) return
+        
+        setLoading(true)
+        try {
+            await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    formType: 'Free Visa Check',
+                    email,
+                }),
+            })
+            setEmail('')
+            alert('Thank you! We will contact you soon.')
+        } catch (error) {
+            alert('Failed to send. Please try again.')
+        }
+        setLoading(false)
+    }
+
     return (
         <main className="overflow-hidden [--color-primary-foreground:var(--color-white)] [--color-primary:var(--color-green-600)]">
             <section>
@@ -45,7 +71,7 @@ export default function HeroSection() {
                                 speedSegment={0.3}
                                 delay={0.5}
                                 as="p"
-                                className="mx-auto mt-6 max-w-2xl text-pretty text-lg">
+                                className="mx-auto mt-6 max-w-2xl text-pretty text-base">
                                 Stop dreaming about a bigger life and start living it. Ultra Large is your dedicated partner for securing successful study, work, and permanent residency visas across the globe. We simplify complex immigration processes so you can focus on monumental results.
                             </TextEffect>
 
@@ -62,20 +88,22 @@ export default function HeroSection() {
                                     ...transitionVariants,
                                 }}
                                 className="mt-12">
-                                <form
-                                    action=""
-                                    className="mx-auto max-w-sm">
+                                <form onSubmit={handleSubmit} className="mx-auto max-w-sm">
                                     <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
                                         <SendHorizonal className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
-
                                         <input
-                                            placeholder="Start Free Check"
-                                            className="h-12 w-full bg-transparent pl-12 focus:outline-none"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder="Enter your email"
+                                            className="h-12 w-full bg-transparent pl-12 focus:outline-none text-sm"
                                             type="email"
+                                            maxLength={50}
+                                            required
                                         />
-
                                         <div className="md:pr-1.5 lg:pr-0">
                                             <Button
+                                                type="submit"
+                                                disabled={loading}
                                                 aria-label="submit"
                                                 size="sm"
                                                 className="rounded-xl bg-blue-600 hover:bg-blue-700">
