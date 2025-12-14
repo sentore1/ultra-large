@@ -143,6 +143,7 @@ export default function HeroSection() {
                                             className="object-cover object-center"
                                             priority
                                         />
+                                        <div className="absolute inset-0 bg-black/30" />
                                         <button onClick={() => setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full">
                                             <ChevronLeft className="size-6" />
                                         </button>

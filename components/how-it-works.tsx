@@ -16,7 +16,7 @@ export default function HowItWorks() {
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-16">
                     <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
                         <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-gray-100 dark:bg-gray-800">
-                            <UserCheck className="size-8 text-gray-700 dark:text-gray-300" />
+                            <UserCheck className="size-6 text-gray-700 dark:text-gray-300" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3">Free Assessment</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -26,7 +26,7 @@ export default function HowItWorks() {
 
                     <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
                         <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-gray-100 dark:bg-gray-800">
-                            <FileText className="size-8 text-gray-700 dark:text-gray-300" />
+                            <FileText className="size-6 text-gray-700 dark:text-gray-300" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3">Document Preparation</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -36,7 +36,7 @@ export default function HowItWorks() {
 
                     <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
                         <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-gray-100 dark:bg-gray-800">
-                            <CheckCircle className="size-8 text-gray-700 dark:text-gray-300" />
+                            <CheckCircle className="size-6 text-gray-700 dark:text-gray-300" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3">Visa Application</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -46,7 +46,7 @@ export default function HowItWorks() {
 
                     <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
                         <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-gray-100 dark:bg-gray-800">
-                            <Plane className="size-8 text-gray-700 dark:text-gray-300" />
+                            <Plane className="size-6 text-gray-700 dark:text-gray-300" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3">Travel & Settlement</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
