@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { Mail, SendHorizonal, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Mail, SendHorizonal, ChevronLeft, ChevronRight, GraduationCap, Briefcase, Plane, CheckCircle, Globe, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
@@ -29,11 +29,11 @@ const transitionVariants = {
 }
 
 const heroImages = [
-    '/heroimage2.png',
-    '/heroimage3.png',
-    '/heroimage4.png',
-    '/Express.png',
-    '/workpermit2.jpg'
+    '/New folder/canadaimage.jpg',
+    '/New folder/travelimage2.jpg',
+    '/New folder/canadavisa2.jpg',
+    '/New folder/studentvisa.jpg',
+    '/New folder/travelimage.jpg'
 ]
 
 export default function HeroSection() {
@@ -73,23 +73,24 @@ export default function HeroSection() {
     return (
         <main className="overflow-hidden [--color-primary-foreground:var(--color-white)] [--color-primary:var(--color-green-600)]">
             <section>
-                    <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-32 lg:pt-48">
-                        <div className="relative z-10 mx-auto max-w-4xl text-center">
+                <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-24 lg:pt-32">
+                    <div className="grid lg:grid-cols-[500px_1fr] gap-10 items-start">
+                        <div className="space-y-5">
                             <TextEffect
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
                                 as="h1"
-                                className="text-balance text-5xl font-normal md:text-6xl">
+                                className="text-3xl font-bold md:text-4xl">
                                 Trusted Travel & Immigration Experts in Rwanda
                             </TextEffect>
                             <TextEffect
                                 per="line"
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
-                                delay={0.5}
+                                delay={0.2}
                                 as="p"
-                                className="mx-auto mt-6 max-w-2xl text-pretty text-base">
-                                ULTRALARGE LTD - Your gateway to Canada, USA, and Europe. Expert immigration services including Express Entry, work permits, student visas, Schengen visas, plus flight booking and car rentals.
+                                className="text-sm text-muted-foreground">
+                                Your gateway to Canada, USA, and Europe. Expert immigration services including Express Entry, work permits, student visas, Schengen visas, plus flight booking and car rentals.
                             </TextEffect>
 
                             <AnimatedGroup
@@ -98,68 +99,119 @@ export default function HeroSection() {
                                         visible: {
                                             transition: {
                                                 staggerChildren: 0.05,
-                                                delayChildren: 0.75,
+                                                delayChildren: 0.4,
                                             },
                                         },
                                     },
                                     ...transitionVariants,
                                 }}
-                                className="mt-12">
-                                <form onSubmit={handleSubmit} className="mx-auto max-w-sm">
-                                    <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-                                        <SendHorizonal className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
-                                        <input
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="Enter your email"
-                                            className="h-12 w-full bg-transparent pl-12 focus:outline-none text-sm"
-                                            type="email"
-                                            maxLength={50}
-                                            required
-                                        />
-                                        <div className="md:pr-1.5 lg:pr-0">
+                                className="space-y-4">
+                                <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                                    <Link href="/study-abroad" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+                                        <GraduationCap className="size-5 text-blue-600 shrink-0" />
+                                        <div>
+                                            <h3 className="font-bold text-xs">Study Abroad</h3>
+                                            <p className="text-[10px] text-muted-foreground">Canada, USA, Europe</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/immigration/work-permit" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+                                        <Briefcase className="size-5 text-blue-600 shrink-0" />
+                                        <div>
+                                            <h3 className="font-bold text-xs">Work Permits</h3>
+                                            <p className="text-[10px] text-muted-foreground">Express Entry</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/services/europe" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+                                        <Globe className="size-5 text-blue-600 shrink-0" />
+                                        <div>
+                                            <h3 className="font-bold text-xs">Schengen Visas</h3>
+                                            <p className="text-[10px] text-muted-foreground">Europe travel</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/services/travel" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+                                        <Plane className="size-5 text-blue-600 shrink-0" />
+                                        <div>
+                                            <h3 className="font-bold text-xs">Travel Services</h3>
+                                            <p className="text-[10px] text-muted-foreground">Flights & rentals</p>
+                                        </div>
+                                    </Link>
+                                </div>
+
+                                <div className="bg-blue-600 rounded-xl p-4 text-white">
+                                    <h3 className="font-bold text-sm mb-3">What We Offer</h3>
+                                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="size-3.5 shrink-0" />
+                                            <span>Free eligibility check</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="size-3.5 shrink-0" />
+                                            <span>CRS calculator & NOC finder</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="size-3.5 shrink-0" />
+                                            <span>Document prep & SOP writing</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="size-3.5 shrink-0" />
+                                            <span>Expert visa processing</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <form onSubmit={handleSubmit}>
+                                    <div className="bg-white dark:bg-zinc-900 rounded-[1.5rem] p-1.5 border shadow-sm">
+                                        <div className="grid grid-cols-[1fr_auto] items-center gap-2">
+                                            <input
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                placeholder="Enter your email"
+                                                className="h-10 w-full bg-transparent pl-3 focus:outline-none text-sm"
+                                                type="email"
+                                                required
+                                            />
                                             <Button
                                                 type="submit"
                                                 disabled={loading}
-                                                aria-label="submit"
                                                 size="sm"
-                                                className="rounded-xl bg-blue-600 hover:bg-blue-700">
-                                                <span className="hidden md:block">Start Free Check</span>
-                                                <SendHorizonal
-                                                    className="relative mx-auto size-5 md:hidden"
-                                                    strokeWidth={2}
-                                                />
+                                                className="rounded-xl bg-blue-600 hover:bg-blue-700 h-9 px-4 text-xs">
+                                                Start Free Check
                                             </Button>
                                         </div>
                                     </div>
                                 </form>
-
-                                <div className="relative mx-auto mt-32 max-w-5xl">
-                                    <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                                        <Image
-                                            src={heroImages[currentImage]}
-                                            alt="Travel & Immigration"
-                                            fill
-                                            className="object-cover object-center"
-                                            priority
-                                        />
-                                        <div className="absolute inset-0 bg-black/30" />
-                                        <button onClick={() => setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full">
-                                            <ChevronLeft className="size-6" />
-                                        </button>
-                                        <button onClick={() => setCurrentImage((prev) => (prev + 1) % heroImages.length)} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full">
-                                            <ChevronRight className="size-6" />
-                                        </button>
-                                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                                            {heroImages.map((_, idx) => (
-                                                <button key={idx} onClick={() => setCurrentImage(idx)} className={`w-2 h-2 rounded-full ${idx === currentImage ? 'bg-white' : 'bg-white/50'}`} />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
                             </AnimatedGroup>
                         </div>
+
+                        <AnimatedGroup
+                            variants={{
+                                container: {
+                                    visible: {
+                                        transition: {
+                                            staggerChildren: 0.05,
+                                            delayChildren: 0.3,
+                                        },
+                                    },
+                                },
+                                ...transitionVariants,
+                            }}>
+                            <div className="relative h-[450px] lg:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl">
+                                <Image
+                                    src={heroImages[currentImage]}
+                                    alt="Travel & Immigration"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                                    {heroImages.map((_, idx) => (
+                                        <button key={idx} onClick={() => setCurrentImage(idx)} className={`h-2 rounded-full transition-all ${idx === currentImage ? 'bg-white w-8' : 'bg-white/60 w-2'}`} />
+                                    ))}
+                                </div>
+                            </div>
+                        </AnimatedGroup>
                     </div>
+                </div>
             </section>
             <LogoCloud />
         </main>
