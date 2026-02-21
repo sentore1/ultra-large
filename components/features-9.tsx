@@ -25,8 +25,7 @@ export default function Features9() {
                         <div className="absolute inset-0 z-10 m-auto size-fit">
                             <div className="rounded-(--radius) bg-background z-1 dark:bg-muted relative flex size-fit w-fit items-center gap-2 border px-3 py-1 text-xs font-medium shadow-md shadow-zinc-950/5">
                                 <span className="text-lg">🇨🇦</span> Latest visa approval from Canada
-                            </div>
-                            <div className="rounded-(--radius) bg-background absolute inset-2 -bottom-2 mx-auto border px-3 py-4 text-xs font-medium shadow-md shadow-zinc-950/5 dark:bg-zinc-900"></div>
+                            </div>                        
                         </div>
 
                         <div className="relative overflow-hidden">
